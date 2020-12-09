@@ -14,11 +14,6 @@ Either one can be used interchangeably.
 This server acts only as an event broker - you will need both a running chat
 backend and some sort of plugin in order for anything visible to happen.
 
-### Go
-
-The Go version uses the official gRPC libraries for a server implementation but
-a semi-custom http Handler in order to support grpc-web.
-
 ### Rust
 
 The Rust version uses `tonic` for a gRPC server implementation.
@@ -26,15 +21,14 @@ The Rust version uses `tonic` for a gRPC server implementation.
 ## Building
 
 The easiest way to build and deploy `seabird-core` is to use the [official
-docker images](https://hub.docker.com/r/seabirdchat/seabird-core). The `go` and
-`rust` tags point to the Go and Rust implementations respectively on the master
+docker images](https://hub.docker.com/r/seabirdchat/seabird-core). The
+`rust` tags point to the Rust implementations respectively on the master
 branch. Additionally, the `latest` tag will point to whichever implementation is
-given focus when implementing. This is currently the `rust` version.
+given focus when implementing. This is currently the `rust` version, there used to be a `go` version
 
 In order to build these, you can use one of the following:
 
 ```sh
-docker build -t seabird-core:go -f Dockerfile-go .
 docker build -t seabird-core:rust -f Dockerfile-rust .
 ```
 
